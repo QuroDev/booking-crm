@@ -1,0 +1,18 @@
+# Netlify configuration for Nouveau Booking CRM (Next.js 15, server-rendered).
+#
+# NOTE: this app has a real server side (auth, server actions, Google OAuth
+# routes), so it CANNOT be deployed with Netlify's static drag-and-drop upload.
+# Deploy by linking the GitHub repo in the Netlify UI, or from this folder:
+#   npx netlify-cli login
+#   npx netlify-cli deploy --build --prod
+#
+# Set every variable from .env.example in Site settings → Environment variables,
+# with NEXT_PUBLIC_APP_URL set to the final Netlify URL, and add
+# {NEXT_PUBLIC_APP_URL}/api/google/oauth/callback to the Google OAuth client.
+
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
