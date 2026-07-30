@@ -6,7 +6,14 @@ import { callTypeLabel } from "@/lib/constants";
 import type { Booking } from "@/types/database";
 import { getAuthorizedCalendar } from "./tokens";
 
-const OWNER_EMAIL = "qaisnaveed2008@gmail.com";
+/**
+ * Both admins are invited to every event, so it lands on both of their
+ * calendars regardless of which account holds the Google connection.
+ */
+const TEAM_ATTENDEES = [
+  "qaisnaveed2008@gmail.com",
+  "jaydxn413@gmail.com",
+];
 
 export interface SyncResult {
   eventId: string;
@@ -34,7 +41,9 @@ function buildEventBody(
 
   const attendees: calendar_v3.Schema$EventAttendee[] = [
     { email: booking.email, displayName: clientName },
-    { email: OWNER_EMAIL },
+    ...TEAM_ATTENDEES.filter(
+      (email) => email.toLowerCase() !== booking.email.toLowerCase()
+    ).map((email) => ({ email })),
   ];
 
   const event: calendar_v3.Schema$Event = {
