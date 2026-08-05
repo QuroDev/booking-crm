@@ -80,7 +80,7 @@ export default async function SettingsPage({
           <AlertTitle>Connected with an unexpected account</AlertTitle>
           <AlertDescription className="text-warning/80">
             Events will be created on {params.account}&apos;s calendar — the
-            expected account is qaisnaveed2008@gmail.com. Reconnect while
+            expected account is jaydxn413@gmail.com. Reconnect while
             signed into the right Google account if this was a mistake.
           </AlertDescription>
         </Alert>
@@ -93,8 +93,8 @@ export default async function SettingsPage({
               <CalendarCheck2 className="size-4 text-primary" /> Google Calendar
             </CardTitle>
             <CardDescription>
-              Bookings create events on Qais&apos;s calendar
-              (qaisnaveed2008@gmail.com) with Google Meet links and client
+              Bookings create events on Jayden&apos;s calendar
+              (jaydxn413@gmail.com) with Google Meet links and client
               invitations.
             </CardDescription>
           </CardHeader>
@@ -136,7 +136,7 @@ export default async function SettingsPage({
                   </p>
                 </div>
                 <p className="text-xs text-muted-foreground">
-                  Sign into Google as <strong>qaisnaveed2008@gmail.com</strong>{" "}
+                  Sign into Google as <strong>jaydxn413@gmail.com</strong>{" "}
                   before clicking connect.
                 </p>
                 <Button
@@ -164,7 +164,7 @@ export default async function SettingsPage({
             </CardTitle>
             <CardDescription>
               Every booking, reschedule and cancellation emails{" "}
-              {process.env.NOTIFY_EMAIL ?? "qaisnaveed2008@gmail.com"} via
+              {process.env.NOTIFY_EMAIL ?? "jaydxn413@gmail.com"} via
               Resend.
             </CardDescription>
           </CardHeader>

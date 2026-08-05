@@ -50,7 +50,7 @@ function buildHtml(event: NotificationEvent): string {
   return `
   <div style="background:#0d0d10;padding:32px 16px;font-family:Segoe UI,Helvetica,Arial,sans-serif;">
     <div style="max-width:560px;margin:0 auto;background:#17171b;border:1px solid #26262c;border-radius:14px;padding:28px;">
-      <p style="margin:0 0 4px;color:#8b8b95;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;">Nouveau Booking CRM</p>
+      <p style="margin:0 0 4px;color:#8b8b95;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;">Nouveau Booking</p>
       <h1 style="margin:0 0 20px;color:#f4f4f6;font-size:20px;">${heading}</h1>
       ${
         event.previousMeetingLabel
@@ -87,7 +87,7 @@ export async function sendBookingNotification(
   if (!isResendConfigured()) {
     return "Email notification skipped (Resend is not configured).";
   }
-  const to = process.env.NOTIFY_EMAIL ?? "qaisnaveed2008@gmail.com";
+  const to = process.env.NOTIFY_EMAIL ?? "jaydxn413@gmail.com";
   const from = process.env.EMAIL_FROM ?? "Nouveau Booking <onboarding@resend.dev>";
 
   try {

@@ -63,9 +63,9 @@ function buildEventBody(
 export function buildEventLocation(booking: Booking): string | null {
   switch (booking.call_type) {
     case "phone":
-      return `Phone Call – Qais will call ${booking.phone}`;
+      return `Phone Call – Qais & Jayden will call ${booking.phone}`;
     case "facetime":
-      return `FaceTime – Qais will FaceTime ${booking.phone}`;
+      return `FaceTime – Qais & Jayden will FaceTime ${booking.phone}`;
     case "whatsapp":
       return `WhatsApp Call – ${booking.whatsapp || booking.phone}`;
     default:

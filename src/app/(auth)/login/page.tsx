@@ -20,7 +20,7 @@ export default async function LoginPage({
           </div>
           <div>
             <h1 className="text-xl font-semibold tracking-tight">
-              Nouveau Booking CRM
+              Nouveau Booking
             </h1>
             <p className="mt-1 text-sm text-muted-foreground">
               Sign in to book and manage strategy calls

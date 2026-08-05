@@ -18,7 +18,7 @@ export function Sidebar({ isAdmin }: { isAdmin: boolean }) {
         </div>
         <div className="leading-tight">
           <p className="text-sm font-semibold tracking-tight">Nouveau</p>
-          <p className="text-[11px] text-muted-foreground">Booking CRM</p>
+          <p className="text-[11px] text-muted-foreground">Booking Bitch Ass Nigga</p>
         </div>
       </div>
       <nav className="flex-1 space-y-1 px-3 py-4">

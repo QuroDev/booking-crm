@@ -181,7 +181,7 @@ export function StatusActions({
             <AlertDialogDescription>
               {confirm === "delete"
                 ? "The booking and its history are permanently removed, and the Google Calendar event is deleted. This cannot be undone."
-                : "The Google Calendar event is removed and the client is notified. The booking stays in the CRM as cancelled."}
+                : "The Google Calendar event is removed and the client is notified. The booking stays in the  as cancelled."}
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>

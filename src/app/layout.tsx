@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Nouveau Booking CRM",
-    template: "%s · Nouveau Booking CRM",
+    default: "Nouveau Booking",
+    template: "%s · Nouveau Booking",
   },
   description:
     "Book strategy calls, sync Google Calendar, and manage clients from one place.",

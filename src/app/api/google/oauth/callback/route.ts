@@ -17,7 +17,7 @@ function emailFromIdToken(idToken: string | null | undefined): string | null {
 }
 
 const STATE_COOKIE = "google_oauth_state";
-const EXPECTED_ACCOUNT = "qaisnaveed2008@gmail.com";
+const EXPECTED_ACCOUNT = "jaydxn413@gmail.com";
 
 function settingsRedirect(request: NextRequest, params: Record<string, string>) {
   const url = new URL("/settings", request.url);

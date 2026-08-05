@@ -20,7 +20,7 @@ const STEPS = [
     key: "google",
     title: "Google Calendar credentials",
     detail:
-      "In Google Cloud Console: enable the Calendar API, configure the OAuth consent screen (External, publishing status In production), create a Web OAuth client with redirect URI {APP_URL}/api/google/oauth/callback, then set GOOGLE_CLIENT_ID and GOOGLE_CLIENT_SECRET. Qais connects his calendar later from Settings.",
+      "In Google Cloud Console: enable the Calendar API, configure the OAuth consent screen (External, publishing status In production), create a Web OAuth client with redirect URI {APP_URL}/api/google/oauth/callback, then set GOOGLE_CLIENT_ID and GOOGLE_CLIENT_SECRET. Jayden's connects his calendar later from Settings.",
   },
   {
     key: "resend",
@@ -45,7 +45,7 @@ export default function SetupPage() {
         </div>
         <div>
           <h1 className="text-xl font-semibold tracking-tight">
-            Nouveau Booking CRM — Setup
+            Nouveau Booking — Setup
           </h1>
           <p className="text-sm text-muted-foreground">
             Finish these steps, restart the dev server, and you&apos;re in.

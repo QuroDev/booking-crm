@@ -59,7 +59,7 @@ export async function clearGoogleCredentials(): Promise<void> {
   }
 }
 
-/** An authorized Calendar client for Qais's account. Throws GoogleNotConnectedError. */
+/** An authorized Calendar client for Jayden's account. Throws GoogleNotConnectedError. */
 export async function getAuthorizedCalendar(): Promise<calendar_v3.Calendar> {
   let admin;
   try {

@@ -38,7 +38,7 @@ export const metadata: Metadata = { title: "Booking details" };
 
 function googleEventUrl(eventId: string | null): string | null {
   if (!eventId) return null;
-  const eid = Buffer.from(`${eventId} qaisnaveed2008@gmail.com`)
+  const eid = Buffer.from(`${eventId} jaydxn413@gmail.com`)
     .toString("base64")
     .replace(/=+$/, "");
   return `https://calendar.google.com/calendar/event?eid=${eid}`;

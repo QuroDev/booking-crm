@@ -1,4 +1,4 @@
-export const APP_NAME = "Nouveau Booking CRM";
+export const APP_NAME = "Nouveau Booking";
 
 /** Emails that are automatically granted the admin role (see supabase/migrations/0001). */
 export const ADMIN_EMAILS = [

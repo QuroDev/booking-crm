@@ -477,7 +477,7 @@ export function BookingForm({ booking }: { booking?: Booking }) {
             <Textarea
               id="notes"
               rows={5}
-              placeholder="Anything Qais should know before the call…"
+              placeholder="Anything Jayden/Qais should know before the call…"
               {...register("notes")}
             />
           </div>

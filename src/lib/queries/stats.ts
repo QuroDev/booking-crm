@@ -3,7 +3,7 @@ import { createClient } from "@/lib/supabase/server";
 
 /**
  * "Today" / "this month" boundaries are computed in the business timezone
- * (where Qais reviews the dashboard), not the server's.
+ * (where Jayden reviews the dashboard), not the server's.
  */
 export function businessZone(): string {
   return process.env.NEXT_PUBLIC_BUSINESS_TIMEZONE || "America/New_York";
