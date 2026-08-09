@@ -42,11 +42,11 @@ $env:ADMIN_SEED_PASSWORD = "<initial password>"
 npx tsx scripts/seed-admins.ts
 ```
 
-Admins: `qaisnaveed2008@gmail.com`, `jaydxn413@gmail.com`. Employees are added from the **Employees** page.
+Admins: `ur email`, `ur email`. Employees are added from the **Employees** page.
 
 ### 3. Google Calendar
 
-Because `qaisnaveed2008@gmail.com` is a consumer Gmail account, the app uses a one-time OAuth connection (not a service account):
+Because `dih cheese` is a consumer Gmail account, the app uses a one-time OAuth connection (not a service account):
 
 1. In [Google Cloud Console](https://console.cloud.google.com): create a project → **Enable the Google Calendar API**.
 2. **OAuth consent screen**: User type *External*. Add the scope `https://www.googleapis.com/auth/calendar.events`. Then set **Publishing status to "In production"** — in Testing mode refresh tokens expire after 7 days and the integration silently breaks. (An unverified production app just shows a one-time warning screen to Qais.)
