@@ -1,4 +1,4 @@
-# Nouveau Booking CRM
+#  Booking CRM
 
 A mobile-first CRM for booking client strategy calls. Employees create a booking in under two minutes; the app stores the client record in Supabase, creates a Google Calendar event on Qais's calendar (with a Google Meet link when needed), invites the client, and emails Qais a summary.
 
