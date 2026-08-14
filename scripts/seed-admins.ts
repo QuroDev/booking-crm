@@ -1,14 +1,3 @@
-/**
- * One-time seed: creates the two admin users in Supabase Auth.
- * The handle_new_user trigger (migration 0001) assigns them the admin role
- * automatically based on their email.
- *
- * Usage (PowerShell, from the project root):
- *   $env:NEXT_PUBLIC_SUPABASE_URL = "https://<ref>.supabase.co"
- *   $env:SUPABASE_SERVICE_ROLE_KEY = "<service-role-key>"
- *   $env:ADMIN_SEED_PASSWORD = "<initial password for both admins>"
- *   npx tsx scripts/seed-admins.ts
- */
 import { createClient } from "@supabase/supabase-js";
 
 const ADMINS = [
