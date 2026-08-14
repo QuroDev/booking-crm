@@ -1,17 +1,5 @@
 import { DateTime, IANAZone } from "luxon";
 
-/**
- * Timezone correctness core.
- *
- * Rules this module enforces across the whole app:
- * - Date/time values cross the client → server boundary ONLY as strings
- *   ('2026-07-10', '15:00', 'America/Los_Angeles'). Never as Date objects.
- * - The selected wall-clock time is interpreted IN the selected IANA zone —
- *   never in server time, never as UTC.
- * - All conversion goes through computeMeetingInstant(); DST is handled by
- *   Luxon, never by manual offset math.
- */
-
 export class InvalidMeetingTimeError extends Error {
   constructor(message: string) {
     super(message);
@@ -24,25 +12,13 @@ export function isValidIanaZone(zone: string): boolean {
 }
 
 export interface MeetingInstant {
-  /** UTC instant, e.g. '2026-07-10T22:00:00.000Z' → bookings.start_time_utc */
   startUtcISO: string;
   endUtcISO: string;
-  /** Offset-qualified local time, e.g. '2026-07-10T15:00:00-07:00' → Google dateTime */
   startLocalISO: string;
   endLocalISO: string;
-  /** The IANA zone, echoed back → Google timeZone field + bookings.client_timezone */
   zone: string;
 }
 
-/**
- * THE conversion. Interprets `dateISO` + `time24` in `zone` and derives the
- * exact UTC instants for storage plus offset-qualified local ISO strings for
- * the Google Calendar API.
- *
- * @param dateISO 'YYYY-MM-DD' (from <input type="date">)
- * @param time24  'HH:mm'      (from <input type="time">)
- * @param zone    IANA identifier, e.g. 'America/Los_Angeles'
- */
 export function computeMeetingInstant(
   dateISO: string,
   time24: string,
@@ -70,8 +46,6 @@ export function computeMeetingInstant(
     );
   }
 
-  // Luxon resolves nonexistent local times (DST spring-forward gap) by
-  // shifting forward; detect and reject so the user picks a real time.
   if (start.hour !== Number(hhmm.slice(0, 2)) || start.minute !== Number(hhmm.slice(3, 5))) {
     throw new InvalidMeetingTimeError(
       `${hhmm} does not exist on ${dateISO} in ${zone} (daylight saving change). Pick a different time.`
@@ -89,7 +63,6 @@ export function computeMeetingInstant(
   };
 }
 
-/** Timezone dropdown options, grouped-friendly labels with current UTC offset. */
 export function getTimezoneOptions(): { value: string; label: string }[] {
   const zones: string[] =
     typeof Intl.supportedValuesOf === "function"
@@ -102,7 +75,6 @@ export function getTimezoneOptions(): { value: string; label: string }[] {
   });
 }
 
-/** Renders a stored UTC instant in an explicit zone — never the ambient TZ. */
 export function formatUtcInZone(
   utcISO: string,
   zone: string,
@@ -112,7 +84,6 @@ export function formatUtcInZone(
   return dt.isValid ? dt.toFormat(fmt) : "—";
 }
 
-/** "3:00 PM · America/Los Angeles" from the stored local fields. */
 export function formatBookingLocal(booking: {
   meeting_date: string;
   meeting_time: string;
@@ -130,13 +101,11 @@ function zoneAbbreviation(dt: DateTime): string {
   return dt.toFormat("ZZZZ");
 }
 
-/** Today's date string in a given zone (for date input min/defaults). */
 export function todayInZone(zone: string): string {
   const dt = DateTime.now().setZone(isValidIanaZone(zone) ? zone : "utc");
   return dt.toISODate()!;
 }
 
-/** Fallback list for very old runtimes without Intl.supportedValuesOf. */
 const COMMON_ZONES = [
   "America/Los_Angeles",
   "America/Denver",

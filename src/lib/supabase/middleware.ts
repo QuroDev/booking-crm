@@ -7,7 +7,6 @@ const PUBLIC_PATHS = ["/login", "/setup"];
 export async function updateSession(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // Before setup is complete, keep the app usable enough to show instructions.
   if (!isSupabaseConfigured()) {
     if (pathname === "/setup") return NextResponse.next({ request });
     const url = request.nextUrl.clone();
@@ -38,8 +37,6 @@ export async function updateSession(request: NextRequest) {
     }
   );
 
-  // IMPORTANT: do not run code between createServerClient and getUser() —
-  // it can cause random logouts.
   const {
     data: { user },
   } = await supabase.auth.getUser();

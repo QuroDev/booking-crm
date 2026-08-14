@@ -32,7 +32,6 @@ export async function signIn(
     };
   }
 
-  // Deactivated employees can authenticate but must not enter the app.
   const {
     data: { user },
   } = await supabase.auth.getUser();
