@@ -2,7 +2,7 @@
 
 A mobile-first CRM for booking client strategy calls. Employees create a booking in under two minutes; the app stores the client record in Supabase, creates a Google Calendar event on Qais's calendar (with a Google Meet link when needed), invites the client, and emails Qais a summary.
 
-**Stack:** Next.js 15 (App Router) · TypeScript · Tailwind v4 · shadcn/ui · Supabase (Auth + Postgres + RLS) · Luxon · googleapis · Resend · Recharts · Vercel.
+**Stack:** Next.js 15 (App Router)  TypeScript  Tailwind v4  shadcn/ui  Supabase (Auth + Postgres + RLS)  Luxon  googleapis  Resend  Recharts.
 
 ## Timezone correctness (the #1 requirement)
 
